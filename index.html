@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronograma de Estudos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+
+        .spreadsheet-container {
+            overflow-x: auto;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+        }
+
+        .cell-hover:hover {
+            background-color: #f1f5f9;
+        }
+
+        .day-column {
+            background-color: #f8fafc;
+            font-weight: 700;
+            color: #1e293b;
+            border-right: 2px solid #e2e8f0;
+        }
+
+        .header-cell {
+            background-color: #1e293b;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.875rem;
+        }
+
+        .morning-slot {
+            border-left: 4px solid #3b82f6;
+        }
+
+        .afternoon-slot {
+            border-left: 4px solid #10b981;
+        }
+
+        .weekend-slot {
+            border-left: 4px solid #f59e0b;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <div class="max-w-5xl mx-auto">
+        <header class="mb-8 text-center">
+            <h1 class="text-3xl font-bold text-slate-800 flex items-center justify-center gap-3">
+                <span>📊</span> Cronograma de Estudos
+            </h1>
+            <p class="text-slate-500 mt-2">Organização semanal para foco em Programação e S.I.</p>
+        </header>
+
+        <!-- Tabela Principal -->
+        <div class="spreadsheet-container bg-white border border-slate-200 mb-8">
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr>
+                        <th class="header-cell p-4 w-32">Dia</th>
+                        <th class="header-cell p-4">🌅 08:00 – 10:00</th>
+                        <th class="header-cell p-4">☀️ 13:30 – 16:30</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200">
+                    <tr class="cell-hover">
+                        <td class="day-column p-4">Segunda</td>
+                        <td class="p-4 morning-slot">Algoritmos (revisão) + <span class="font-semibold text-blue-600">Python</span> (prática)</td>
+                        <td class="p-4 afternoon-slot"><span class="font-semibold text-emerald-600">HTML</span> (aulas) + prática</td>
+                    </tr>
+                    <tr class="cell-hover">
+                        <td class="day-column p-4">Terça</td>
+                        <td class="p-4 morning-slot">Matemática + Fundamentos de S.I</td>
+                        <td class="p-4 afternoon-slot"><span class="font-semibold text-blue-600">Python</span> (prática) + Web (EAD)</td>
+                    </tr>
+                    <tr class="cell-hover">
+                        <td class="day-column p-4">Quarta</td>
+                        <td class="p-4 morning-slot">Matemática + Inglês Técnico</td>
+                        <td class="p-4 afternoon-slot"><span class="font-semibold text-emerald-600">HTML</span> + mini projeto</td>
+                    </tr>
+                    <tr class="cell-hover">
+                        <td class="day-column p-4">Quinta</td>
+                        <td class="p-4 morning-slot">Fundamentos de S.I + Inglês Técnico</td>
+                        <td class="p-4 afternoon-slot"><span class="font-semibold text-blue-600">Python</span> + Web (EAD)</td>
+                    </tr>
+                    <tr class="cell-hover">
+                        <td class="day-column p-4">Sexta</td>
+                        <td class="p-4 morning-slot">Filosofia + revisão geral</td>
+                        <td class="p-4 afternoon-slot">Prática leve (<span class="text-blue-600">Python</span> ou <span class="text-emerald-600">HTML</span>)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Fim de Semana -->
+        <h2 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2">
+            <span class="text-emerald-500">🟢</span> Fim de Semana (Leve)
+        </h2>
+        
+        <div class="spreadsheet-container bg-white border border-slate-200">
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr>
+                        <th class="header-cell p-4 w-32">Dia</th>
+                        <th class="header-cell p-4">⏱️ Horário Único (até 2h)</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200">
+                    <tr class="cell-hover">
+                        <td class="day-column p-4">Sábado</td>
+                        <td class="p-4 weekend-slot">Revisão leve + pequeno projeto</td>
+                    </tr>
+                    <tr class="cell-hover">
+                        <td class="day-column p-4">Domingo</td>
+                        <td class="p-4 weekend-slot">Revisar dificuldades + organizar semana</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <footer class="mt-8 text-center text-sm text-slate-400">
+            Dica: Use cores diferentes para marcar o que já foi concluído hoje!
+        </footer>
+    </div>
+
+</body>
+</html>
